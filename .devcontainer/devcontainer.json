@@ -1,0 +1,33 @@
+{
+  "name": "Default Dev Environment",
+  "image": "ghcr.io/happyvertical/devcontainer:latest",
+
+  "remoteUser": "will",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  "dotfiles": {
+    "repository": "willgriffin/dotfiles",
+    "installCommand": "./install.sh",
+    "targetPath": "~/dotfiles"
+  },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      },
+      "extensions": [
+        "github.copilot",
+        "github.copilot-chat",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+
+  "postCreateCommand": "echo 'Dev environment ready!'"
+}
